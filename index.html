@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hridyansh Verma | Freelance Web Developer</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --primary-color: #38bdf8;
+            --secondary-color: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(15, 23, 42, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero h1 span {
+            color: var(--primary-color);
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #0b1120;
+            border-top: 1px solid var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">HV.</div>
+    </nav>
+
+    <section id="hero">
+        <h1>Hi, I'm <span>Hridyansh Verma</span></h1>
+        <p>A Frontend Web Developer focused on building clean, responsive, and high-performance digital experiences.</p>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>Creating responsive layouts using HTML, CSS, and modern JavaScript.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Systems & OS</h3>
+                <p>Proficient in configuring and optimizing Linux environments, particularly Arch Linux.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Hardware Optimization</h3>
+                <p>Experience in building systems and extracting maximum performance from existing hardware.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Hridyansh Verma. Available for freelance projects.</p>
+    </footer>
+
+</body>
+</html>
