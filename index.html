@@ -3,57 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hridyansh Verma | Full-Stack Developer</title>
+    <title>Hridyansh Verma | Full-Stack Developer & Optimizer</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-main: #050505;
-            --bg-card: rgba(20, 20, 20, 0.6);
+            --bg-card: rgba(15, 15, 18, 0.7); /* Slightly brighter card for glass effect */
             --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
+            --text-muted: #888888;
             --accent-cyan: #00f2fe;
             --accent-blue: #4facfe;
+            --border-muted: rgba(255, 255, 255, 0.05);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.05), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(79, 172, 254, 0.05), transparent 25%);
+                radial-gradient(circle at 10% 50%, rgba(0, 242, 254, 0.06), transparent 25%),
+                radial-gradient(circle at 90% 30%, rgba(79, 172, 254, 0.06), transparent 25%);
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Navbar */
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        /* Aesthetic Navbar */
         nav {
             position: fixed;
             width: 100%;
-            padding: 1.5rem 5%;
+            padding: 1.2rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border-muted);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: -1px; color: var(--accent-cyan); text-shadow: 0 0 10px rgba(0, 242, 254, 0.3); }
+
+        .cta-btn-nav {
+            padding: 0.6rem 1.8rem;
+            font-weight: 700;
+            color: #000;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 4px;
+            font-size: 0.9rem;
         }
+        .cta-btn-nav:hover { box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3); transform: translateY(-2px); }
 
         /* Hero Section */
         header {
@@ -62,149 +63,127 @@
             flex-direction: column;
             justify-content: center;
             padding: 0 10%;
-            position: relative;
         }
 
         header h1 {
-            font-size: 5rem;
+            font-size: 5.5rem;
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.05;
             margin-bottom: 1rem;
-            letter-spacing: -2px;
+            letter-spacing: -2.5px;
+            text-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
         }
 
         .typewriter-container {
             font-family: 'Fira Code', monospace;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--accent-cyan);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             height: 2rem;
+            opacity: 0.9;
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 500px;
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            font-weight: 700;
-            color: #000;
-            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-blue));
-            border-radius: 4px;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2);
-        }
-
-        /* Terminal About Section */
-        section {
-            padding: 6rem 10%;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 3rem;
-            text-align: center;
-            background: linear-gradient(to right, var(--text-main), var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .terminal-window {
-            background: #0f0f11;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .terminal-header {
-            background: #1a1a1e;
-            padding: 0.75rem 1rem;
-            display: flex;
-            gap: 8px;
-            border-radius: 8px 8px 0 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .dot.red { background: #ff5f56; }
-        .dot.yellow { background: #ffbd2e; }
-        .dot.green { background: #27c93f; }
-
-        .terminal-body {
-            padding: 2rem;
-            font-family: 'Fira Code', monospace;
-            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 3.5rem;
             line-height: 1.8;
-            font-size: 0.95rem;
+            font-weight: 300;
         }
 
-        .terminal-prompt {
-            color: var(--accent-cyan);
-        }
+        /* Bento Box Grid Skills */
+        section { padding: 8rem 10%; }
+        .section-title { font-size: 2.8rem; font-weight: 900; margin-bottom: 4rem; text-align: center; color: var(--text-main); }
 
-        /* Glassmorphism Skills Grid */
-        .skills-grid {
+        .bento-skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .skill-card {
+        .bento-item {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-muted);
+            padding: 3rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Large Bento highlight */
+        .bento-item.full-stack { grid-column: span 2; }
+
+        .bento-item:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+            background: rgba(15, 15, 18, 0.9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .bento-item h3 { font-size: 1.6rem; color: var(--text-main); margin-bottom: 1rem; }
+        .bento-item p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; font-weight: 300; }
+        .bento-item .bento-icon { font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1.5rem; opacity: 0.8; }
+
+        /* Projects Section */
+        .featured-projects { background-color: rgba(5, 5, 5, 0.5); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-muted);
             padding: 2.5rem;
             border-radius: 12px;
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
+        .project-card:hover { border-color: var(--accent-cyan); transform: translateY(-5px); background: rgba(15, 15, 18, 0.9); }
 
-        .skill-card:hover {
-            border-color: var(--accent-cyan);
-            transform: translateY(-5px);
-            background: rgba(20, 20, 20, 0.8);
-        }
+        .project-card h3 { font-size: 1.4rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        .project-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; font-weight: 300; margin-bottom: 2rem; }
 
-        .skill-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
+        .project-tags { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent-cyan); }
+        .project-tags span { background: rgba(0, 242, 254, 0.05); padding: 0.3rem 0.8rem; border-radius: 4px; border: 1px solid rgba(0, 242, 254, 0.1); }
 
-        .skill-card p {
-            color: var(--text-muted);
+        .project-link {
+            display: inline-block;
+            font-weight: 700;
+            color: #000;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-blue));
             font-size: 0.95rem;
-            line-height: 1.6;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        /* Simple Scroll Reveal Animation */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 3rem; }
-            .typewriter-container { font-size: 1.1rem; }
+        /* Minimalist Footer */
+        footer { text-align: center; padding: 5rem 10%; border-top: 1px solid var(--border-muted); background-color: var(--bg-card); }
+        footer h2 { color: var(--text-main); font-size: 2.2rem; margin-bottom: 1rem; }
+        footer p { color: var(--text-muted); margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+        footer .final-cta-btn { padding: 1.2rem 3rem; font-weight: 700; color: #000; background: linear-gradient(45deg, var(--accent-cyan), var(--accent-blue)); border-radius: 4px; font-size: 1.1rem; }
+        footer .final-cta-btn:hover { box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2); transform: translateY(-3px); }
+
+        @media (max-width: 1024px) {
+            header h1 { font-size: 4rem; }
+            .section-title { font-size: 2.2rem; }
+            .bento-skills { grid-template-columns: 1fr; }
+            .bento-item.full-stack { grid-column: span 1; }
+            section { padding: 6rem 5%; }
         }
     </style>
 </head>
@@ -212,111 +191,101 @@
 
     <nav>
         <div class="logo">HV.</div>
-        <a href="#contact" class="cta-btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Hire Me</a>
+        <a href="#contact" class="cta-btn-nav">Hire Me</a>
     </nav>
 
-    <header>
+    <header data-reveal>
         <h1>Hridyansh<br>Verma.</h1>
         <div class="typewriter-container">
             > <span id="typewriter"></span><span class="cursor">_</span>
         </div>
-        <p>I engineer high-performance web applications and optimize digital infrastructure. From pixel-perfect frontends to robust backend systems, I build code that runs fast and looks flawless.</p>
-        <div>
-            <a href="#projects" class="cta-btn">View My Work</a>
-        </div>
+        <p>I engineer high-performance web applications and optimize complex digital infrastructure. From aesthetic frontends to resilient backends, I write code that is clean, responsive, and relentless.</p>
     </header>
 
-    <section id="about">
-        <h2 class="section-title">System.Info</h2>
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-            </div>
-            <div class="terminal-body">
-                <p><span class="terminal-prompt">[hridyansh@archlinux ~]$</span> whoami</p>
-                <p>A full-stack developer with a relentless drive for efficiency. I don't just write code; I understand how it interacts with the system at a granular level.</p>
-                <br>
-                <p><span class="terminal-prompt">[hridyansh@archlinux ~]$</span> fetch --skills</p>
-                <p>Loading core modules...</p>
-                <p>> Frontend: React.js, HTML5, CSS3, Tailwind</p>
-                <p>> Backend: Node.js, SQL</p>
-                <p>> Environment: Linux Administration, Bash</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
+    <section id="capabilities" data-reveal>
         <h2 class="section-title">Core Capabilities</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Full-Stack Development</h3>
-                <p>Building responsive, dynamic user interfaces with React and powering them with secure, scalable Node.js backend architectures.</p>
+        <div class="bento-skills">
+            <div class="bento-item full-stack">
+                <div class="bento-icon">{...}</div>
+                <h3>Full-Stack Systems</h3>
+                <p>Architecting robust applications. I specialize in crafting seamless user interfaces with React, powered by optimized, secure Node.js backend systems and SQL databases.</p>
             </div>
-            <div class="skill-card">
-                <h3>System & Server Architecture</h3>
-                <p>Proficient in Linux environments. Experienced in deploying, configuring, and optimizing high-performance servers, including complex Minecraft network infrastructure.</p>
+            <div class="bento-item">
+                <div class="bento-icon">█▓</div>
+                <h3>Server Optimization</h3>
+                <p>Proficient Linux administrator. I deploy, configure, and refine high-performance servers, including extensive experience with complex infrastructure management.</p>
             </div>
-            <div class="skill-card">
-                <h3>Performance Optimization</h3>
-                <p>Extracting maximum efficiency from hardware to code. I focus on squashing bugs, reducing load times, and ensuring flawless cross-device responsiveness.</p>
+            <div class="bento-item">
+                <div class="bento-icon">↑_</div>
+                <h3>Bug Squash & Performance</h3>
+                <p>Unyielding optimization. I hunt down performance bottlenecks, squash reactive bugs, and ensure impeccable responsiveness across all hardware platforms.</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <h2 style="color: var(--text-main); margin-bottom: 1rem;">Let's Build Something.</h2>
-        <p style="margin-bottom: 2rem;">Currently available for freelance web development and bug fixes.</p>
-        <a href="mailto:hridyanshverma@gmail.com" class="cta-btn">Initialize Contact</a>
-        <br><br><br>
-        <p>&copy; 2026 Hridyansh Verma.</p>
+    <section id="works" class="featured-projects" data-reveal>
+        <h2 class="section-title">Featured Works</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Viper SR-10 Product Page</h3>
+                <p>A high-end, aesthetic dark mode landing page designed for maximum visual impact. Features aggressive animations and smooth parallax scrolling effects.</p>
+                <div class="project-tags">
+                    <span>Aesthetics</span>
+                    <span>Dark Mode</span>
+                    <span>High-End Product</span>
+                    <span>Parallax</span>
+                </div>
+                <a href="./viper.html" target="_blank" class="project-link">Initialize Ride</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" data-reveal>
+        <h2>Ready to Build.</h2>
+        <p>Available for freelance full-stack development, complex bug squashing, and server infrastructure optimization.</p>
+        <a href="mailto:hridyanshverma@gmail.com" class="final-cta-btn">Initialize Contact</a>
+        <br><br><br><br>
+        <p>&copy; 2026 Hridyansh Verma. optimized infrastructure since 2025.</p>
     </footer>
 
     <script>
         // Typing Effect Logic
-        const words = ["Full-Stack Web Developer", "React & Node.js Specialist", "Linux System Enthusiast", "UI/UX Optimizer"];
-        let i = 0;
-        let timer;
-        let isDeleting = false;
-        let wordIndex = 0;
+        const words = ["Full-Stack Web Engineer", "React & Node.js Specialist", "Linux System Enthusiast", "UI/UX Optimizer"];
+        let i = 0; let wordIndex = 0; let isDeleting = false;
 
         function typingEffect() {
             let currentWord = words[wordIndex];
             let typeSpeed = 100;
 
-            if (isDeleting) {
-                currentWord = currentWord.substring(0, i - 1);
-                i--;
-                typeSpeed = 50;
-            } else {
-                currentWord = currentWord.substring(0, i + 1);
-                i++;
-            }
+            if (isDeleting) { currentWord = currentWord.substring(0, i - 1); i--; typeSpeed = 50;
+            } else { currentWord = currentWord.substring(0, i + 1); i++; }
 
             document.getElementById("typewriter").innerHTML = currentWord;
 
-            if (!isDeleting && i === words[wordIndex].length) {
-                isDeleting = true;
-                typeSpeed = 2000; // Pause at end of word
-            } else if (isDeleting && i === 0) {
-                isDeleting = false;
-                wordIndex++;
-                if (wordIndex === words.length) {
-                    wordIndex = 0;
-                }
+            if (!isDeleting && i === words[wordIndex].length) { isDeleting = true; typeSpeed = 2000; // Pause at end of word
+            } else if (isDeleting && i === 0) { isDeleting = false; wordIndex++;
+                if (wordIndex === words.length) { wordIndex = 0; }
                 typeSpeed = 500; // Pause before new word
             }
-
             setTimeout(typingEffect, typeSpeed);
         }
 
-        // Start typing effect on load
-        window.onload = () => {
-            setTimeout(typingEffect, 1000);
-        };
+        // Simple Scroll Reveal Logic
+        function reveal() {
+            const reveals = document.querySelectorAll("[data-reveal]");
+            reveals.forEach(reveal => {
+                const revealTop = reveal.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (revealTop < windowHeight * 0.85) { // Activate reveal when 15% from bottom
+                    reveal.classList.add("revealed");
+                }
+            });
+        }
 
-        // Blinking cursor effect
+        window.onload = () => { setTimeout(typingEffect, 1000); reveal(); };
+        window.addEventListener("scroll", reveal);
+
+        // Blinking cursor
         setInterval(() => {
             const cursor = document.querySelector('.cursor');
             cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
