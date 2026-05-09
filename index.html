@@ -8,7 +8,7 @@
     <style>
         :root {
             --bg-main: #050505;
-            --bg-card: rgba(15, 15, 18, 0.7); /* Slightly brighter card for glass effect */
+            --bg-card: rgba(15, 15, 18, 0.7);
             --text-main: #f3f4f6;
             --text-muted: #888888;
             --accent-cyan: #00f2fe;
@@ -45,6 +45,17 @@
         }
 
         .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: -1px; color: var(--accent-cyan); text-shadow: 0 0 10px rgba(0, 242, 254, 0.3); }
+
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        
+        .github-link {
+            color: var(--text-main);
+            font-weight: 500;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+        .github-link:hover { color: var(--accent-cyan); }
+        .bracket { color: var(--accent-cyan); }
 
         .cta-btn-nav {
             padding: 0.6rem 1.8rem;
@@ -116,7 +127,6 @@
             justify-content: space-between;
         }
 
-        /* Large Bento highlight */
         .bento-item.full-stack { grid-column: span 2; }
 
         .bento-item:hover {
@@ -161,22 +171,31 @@
         }
 
         /* Simple Scroll Reveal Animation */
-        [data-reveal] {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-        [data-reveal].revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        [data-reveal] { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        [data-reveal].revealed { opacity: 1; transform: translateY(0); }
 
         /* Minimalist Footer */
         footer { text-align: center; padding: 5rem 10%; border-top: 1px solid var(--border-muted); background-color: var(--bg-card); }
         footer h2 { color: var(--text-main); font-size: 2.2rem; margin-bottom: 1rem; }
         footer p { color: var(--text-muted); margin-bottom: 2.5rem; max-width: 450px; margin-left: auto; margin-right: auto; line-height: 1.7; }
-        footer .final-cta-btn { padding: 1.2rem 3rem; font-weight: 700; color: #000; background: linear-gradient(45deg, var(--accent-cyan), var(--accent-blue)); border-radius: 4px; font-size: 1.1rem; }
-        footer .final-cta-btn:hover { box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2); transform: translateY(-3px); }
+        
+        .footer-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        
+        .final-cta-btn { 
+            padding: 1.2rem 3rem; 
+            font-weight: 700; 
+            color: #000; 
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-blue)); 
+            border-radius: 4px; 
+            font-size: 1.1rem; 
+        }
+        .final-cta-btn:hover { box-shadow: 0 10px 20px rgba(0, 242, 254, 0.2); transform: translateY(-3px); }
+        
+        .github-btn {
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
 
         @media (max-width: 1024px) {
             header h1 { font-size: 4rem; }
@@ -184,6 +203,8 @@
             .bento-skills { grid-template-columns: 1fr; }
             .bento-item.full-stack { grid-column: span 1; }
             section { padding: 6rem 5%; }
+            .nav-links { gap: 1rem; }
+            .github-link { display: none; } /* Clean up mobile nav */
         }
     </style>
 </head>
@@ -191,7 +212,10 @@
 
     <nav>
         <div class="logo">HV.</div>
-        <a href="#contact" class="cta-btn-nav">Hire Me</a>
+        <div class="nav-links">
+            <a href="https://github.com/hridyanshverma-hub" target="_blank" class="github-link"><span class="bracket">[</span> GitHub <span class="bracket">]</span></a>
+            <a href="#contact" class="cta-btn-nav">Hire Me</a>
+        </div>
     </nav>
 
     <header data-reveal>
@@ -208,17 +232,17 @@
             <div class="bento-item full-stack">
                 <div class="bento-icon">{...}</div>
                 <h3>Full-Stack Systems</h3>
-                <p>Architecting robust applications. I specialize in crafting seamless user interfaces with React, powered by optimized, secure Node.js backend systems and SQL databases.</p>
+                <p>Architecting robust applications. I specialize in crafting seamless user interfaces with React, powered by optimized, secure Node.js backend systems and scalable databases.</p>
             </div>
             <div class="bento-item">
                 <div class="bento-icon">█▓</div>
-                <h3>Server Optimization</h3>
-                <p>Proficient Linux administrator. I deploy, configure, and refine high-performance servers, including extensive experience with complex infrastructure management.</p>
+                <h3>System Architecture</h3>
+                <p>Proficient Linux administrator. I deploy, configure, and refine high-performance servers, extracting maximum efficiency from hardware.</p>
             </div>
             <div class="bento-item">
                 <div class="bento-icon">↑_</div>
-                <h3>Bug Squash & Performance</h3>
-                <p>Unyielding optimization. I hunt down performance bottlenecks, squash reactive bugs, and ensure impeccable responsiveness across all hardware platforms.</p>
+                <h3>Bug Squashing & Optimization</h3>
+                <p>Unyielding precision. I hunt down performance bottlenecks, patch reactive bugs, and ensure impeccable responsiveness across all platforms.</p>
             </div>
         </div>
     </section>
@@ -227,13 +251,13 @@
         <h2 class="section-title">Featured Works</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Viper SR-10 Product Page</h3>
+                <h3>Viper SR-10 Promo Site</h3>
                 <p>A high-end, aesthetic dark mode landing page designed for maximum visual impact. Features aggressive animations and smooth parallax scrolling effects.</p>
                 <div class="project-tags">
                     <span>Aesthetics</span>
                     <span>Dark Mode</span>
                     <span>High-End Product</span>
-                    <span>Parallax</span>
+                    <span>Animations</span>
                 </div>
                 <a href="./viper.html" target="_blank" class="project-link">Initialize Ride</a>
             </div>
@@ -243,8 +267,13 @@
     <footer id="contact" data-reveal>
         <h2>Ready to Build.</h2>
         <p>Available for freelance full-stack development, complex bug squashing, and server infrastructure optimization.</p>
-        <a href="mailto:hridyanshverma@gmail.com" class="final-cta-btn">Initialize Contact</a>
-        <br><br><br><br>
+        
+        <div class="footer-buttons">
+            <a href="mailto:hridyanshverma@gmail.com" class="final-cta-btn">Initialize Contact</a>
+            <a href="https://github.com/hridyanshverma-hub" target="_blank" class="final-cta-btn github-btn">View GitHub</a>
+        </div>
+        
+        <br><br>
         <p>&copy; 2026 Hridyansh Verma. optimized infrastructure since 2025.</p>
     </footer>
 
@@ -262,10 +291,10 @@
 
             document.getElementById("typewriter").innerHTML = currentWord;
 
-            if (!isDeleting && i === words[wordIndex].length) { isDeleting = true; typeSpeed = 2000; // Pause at end of word
+            if (!isDeleting && i === words[wordIndex].length) { isDeleting = true; typeSpeed = 2000; 
             } else if (isDeleting && i === 0) { isDeleting = false; wordIndex++;
                 if (wordIndex === words.length) { wordIndex = 0; }
-                typeSpeed = 500; // Pause before new word
+                typeSpeed = 500; 
             }
             setTimeout(typingEffect, typeSpeed);
         }
@@ -276,7 +305,7 @@
             reveals.forEach(reveal => {
                 const revealTop = reveal.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
-                if (revealTop < windowHeight * 0.85) { // Activate reveal when 15% from bottom
+                if (revealTop < windowHeight * 0.85) { 
                     reveal.classList.add("revealed");
                 }
             });
@@ -288,7 +317,7 @@
         // Blinking cursor
         setInterval(() => {
             const cursor = document.querySelector('.cursor');
-            cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            if(cursor) cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
         }, 500);
     </script>
 </body>
